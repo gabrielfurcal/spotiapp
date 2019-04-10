@@ -7,10 +7,13 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   styles: []
 })
 export class HomeComponent {
-
   nuevasCanciones: any[] = [];
 
   loading: boolean;
+
+  error: boolean = false;
+
+  mensajeError: string;
 
   constructor(private spotify: SpotifyService) {
     this.loading = true;
@@ -19,6 +22,11 @@ export class HomeComponent {
       .subscribe((data: any) => {
         this.nuevasCanciones = data;
         this.loading = false;
+        this.error = false;
+      }, (errorServicio) => {
+        this.loading = false;
+        this.error = true;
+        this.mensajeError = errorServicio.error.error.message;
       });
   }
 }
