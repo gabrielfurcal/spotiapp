@@ -15,9 +15,9 @@ export class TarjetasComponent {
     let artistaId;
 
     if(item.type === 'artist') {
-      artistaId = item.identifierModuleUrl;
+      artistaId = item.id;
     } else {
-      artistaId = item.artist[0].id;
+      artistaId = item.artists[0].id;
     }
 
     this.router.navigate(['/artist', artistaId]);

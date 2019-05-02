@@ -12,13 +12,13 @@
         </p>
     </div>
     <div class="col-4 text-right">
-        <button routerLink="/search" class="btn btn-outline-danger"></button>
+        <button routerLink="/search" class="btn btn-outline-danger">Regresar</button>
     </div>
 </div>
 
 <div class="row m-5">
     <div class="col">
-        <table class="table">
+        <table class="table" style="color:white;">
             <thead>
                 <tr>
                     <th>Foto</th>
@@ -30,7 +30,7 @@
             <tbody>
                 <tr *ngFor="let track of topTracks">
                     <td>
-                        <img [src]="track.almbum.images | noimage" class="img-thumb">
+                        <img [src]="track.album.images | noimage" class="img-thumb">
                     </td>
                     <td>{{track.album.name}}</td>
                     <td>{{track.name}}</td>

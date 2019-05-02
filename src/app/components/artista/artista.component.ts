@@ -14,7 +14,7 @@ export class ArtistaComponent {
 
   loading: boolean = false;
 
-  constructor(private router: ActivatedRoute, private spotify: SpotifyService) { 
+  constructor(private router: ActivatedRoute, private spotify: SpotifyService) {
     this.loading = true;
 
     this.router.params.subscribe(params => {
